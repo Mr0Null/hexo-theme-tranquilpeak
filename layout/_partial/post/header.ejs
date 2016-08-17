@@ -1,4 +1,4 @@
-<div class="post-header main-content-wrap <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>">
+<div class="post-header main-content-wrap <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-right') %>">
     <% if (post.link) { %>
         <h1 itemprop="headline">
             <a class="link" href="<%- url_for(post.link) %>" target="_blank" itemprop="url">

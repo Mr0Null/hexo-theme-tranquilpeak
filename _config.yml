@@ -1,5 +1,5 @@
 # Tranquilpeak
-# Version : 1.9.1
+# Version : 1.8.0
 # Author : Louis Barranqueiro
 
 # I STRONGLY recommend you to use a CDN to speed up loading of pages.
@@ -43,33 +43,41 @@ sidebar:
             title: global.tags
             url: /all-tags
             icon: tags
-        archives:
-            title: global.archives
-            url: /all-archives
-            icon: archive
-        search:
-            title: global.search
-            url: /#search
-            icon: search
-            # `open-algolia-search` classes are used to open algolia search modal
-            class: open-algolia-search
+#        archives:
+#            title: global.archives
+#            url: /all-archives
+#            icon: archive
+#        search:
+#            title: global.search
+#            url: /#search
+#            icon: search
+            # `st-search-show-outputs` classes are used to open swiftype search window
+#            class: st-search-show-outputs
         about:
             title: global.about
             url: /#about
             icon: question
     author_links:
-        # github:
-        #     title: global.github
-        #     url: https://github.com/
-        #     icon: github
+         github:
+             title: global.github
+             url: https://github.com/Mr0Null
+             icon: github
         # stack_overflow:
         #     title: global.stack_overflow
         #     url: http://stackoverflow.com/users
         #     icon: stack-overflow
-        # twitter:
-        #     title: global.twitter
-        #     url: https://twitter.com/
-        #     icon: twitter
+         twitter:
+             title: global.twitter
+             url: https://twitter.com/MrC0de
+             icon: twitter
+         instagram:
+             title: global.instagram
+             url: https://www.instagram.com/hex.beeit
+             icon: instagram
+         telegram:
+             title: global.telegram
+             url: https://telegram.me/hexlinux
+             icon: paper-plane
         # facebook:
         #     title: global.facebook
         #     url: https://facebook.com/
@@ -82,14 +90,14 @@ sidebar:
         #     title: global.linkedin
         #     url: https://www.linkedin.com/profile/
         #     icon: linkedin
-        # mail:
-        #     title: global.mail
-        #     url: mailto:
-        #     icon: envelope-o
+         mail:
+             title: global.mail
+             url: mailto:mohammadamin@beeit.ir
+             icon: envelope-o
     rss:
         rss:
             title: global.rss
-            url: /atom.xml
+            url: /feed.xml
             icon: rss
 
 
@@ -98,10 +106,10 @@ sidebar:
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
 # By default, author's gravatar or author's picture is displayed if `icon` is empty
 # DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
-# E.g to display a shortcut to open algolia search window :
+# E.g to display a shortcut to open swiftype search window :
 #     url: /#search
 #     icon: search
-#     class: open-algolia-search
+#     class: st-search-show-outputs
 header:
     right_link:
         url: /#about
@@ -112,48 +120,36 @@ header:
 # Author
 # Your biography and your job is editable in each languages files in `languages` folder
 author:
-    email:
-    location:
+    email: mohammadamin@beeit.ir
+    location: Tehran
     # Your profile picture located in folder `source/_images/` (development)
     # or in `source/assets/images/` (production)
     # or you can use an external url
     # Overwritten by your gravatar image if `gravatar_email` is filled
     picture:
     # Your Twitter username without the @. E.g : `tranquilpeak`
-    twitter:
-    # Your personal google plus profile id, not your blog or business page id.
-    # E.g : `+JohnDoe` or `123812884128439`
+    twitter: MrC0de
+    # Your google plus profile id. E.g : `+Tranquilpeak` or `123812884128439`
     google_plus:
-    # Your businnes google plus profile id. If not provided, personal will be used instead.
-    # E.g : `+Tranquilpeak` or `123812884128439`
-    google_plus_business:
 
 
 # Customization
 # Define the behavior of the sidebar
-# 1: Display extra large sidebar on extra large screen, large sidebar on large screen,
-# medium sidebar on medium screen and header bar on small screen and
-# extra large sidebar is swiped on extra large screen and large sidebar on all lower screen (default)
-# 2: Display large sidebar on large screen, medium sidebar on medium screen and
-# header bar on small screen and large sidebar is swiped
-# 3: Display medium sidebar on large and medium screen and header bar on small screen and
-# medium sidebar is swiped
-# 4: Display header bar on all screens, extra large sidebar is swiped on extra large screen and
-# large sidebar is swiped on all lower screens
-# 5: Display header bar on all screens and large sidebar is swiped on large screen
-# 6: Display header bar on all screens and medium sidebar is swiped
+# 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
+# and large sidebar is swiped
+# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped (default)
+# 3: Display header bar on all screens and large sidebar is swiped
+# 4: Display header bar on all screens and medium sidebar is swiped
 sidebar_behavior: 1
-# Hide sidebar on all article page to let article take full width to improve reading, and
-# enjoy wide images and cover images. (true: enable, false: disable)
-clear_reading: true
+# Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
+clear_reading: false
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
 thumbnail_image: true
 # Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`)
 # Set this value to `right` if you have old posts to keep the old style on them
 # and define `thumbnailImagePosition` on a post to overwrite this setting
-thumbnail_image_position: right
-# Automatically select the cover image or the first photo from the gallery of a post if
-# there is no thumbnail image as the thumbnail image
+thumbnail_image_position: left
+# Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image
 # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
 # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
 auto_thumbnail_image: true
@@ -161,14 +157,13 @@ auto_thumbnail_image: true
 # There is many free CDN like Cloudinary or you can also use indirectly
 # by using services like Google Photos.
 # Current image is on AWS S3 and delivered by AWS CloudFront.
-# Otherwise put your image in folder `source/_images/` (development)
-# or in `source/assets/images/` if you can't or don't want to build the theme,
+# Otherwise put your image in folder `source/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
 # and use relative url : `your-image.png`
-cover_image: cover.jpg
+cover_image: bg.jpg
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 favicon:
 # Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
-image_gallery: true
+image_gallery: false
 # Pagination behavior of archive, category and tag pages (false: pagination disabled, true: pagination enabled)
 archive_pagination: true
 category_pagination: true
@@ -179,15 +174,17 @@ tag_pagination: true
 # You can't use Disqus and Duoshuo together
 # then fill the right shortname
 # Your Disqus shortname
-disqus_shortname:
+disqus_shortname: hexbeeitir
 # Your Duoshuo shortname
 duoshuo_shortname:
 # Your Google analystics web property ID : UA-XXXXX-X
-google_analytics_id:
+google_analytics_id: UA-81275107-1
 # Your Baidu analystics web property ID : 9505a5af654a2478f93fd6c0ae4f687d
 baidu_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-gravatar_email:
+gravatar_email: mav.ipad@live.com
+# Your swiftype install key
+swiftype_install_key:
 # Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307

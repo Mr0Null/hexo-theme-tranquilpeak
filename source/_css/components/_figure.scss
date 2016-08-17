@@ -3,8 +3,7 @@
         clear: both;
     }
     &.center {
-        width:  calc(100% - 4px);
-        margin: 2px auto;
+        @extend .fig-100;
 
         .fig-img {
             margin: 2px auto;

@@ -44,8 +44,6 @@
     'components/link',
     'components/main-content',
     'components/markdown',
-    'components/media',
-    'components/modal',
     'components/pagination',
     'components/post',
     'components/post-actions',
@@ -59,8 +57,6 @@
     'components/video';
 
 @import
-    'pages/search';
-
-@import
     'themes/hljs-tranquilpeak',
     'themes/hljs-custom';
+@import 'rtl';

@@ -12,11 +12,7 @@
     }
 }
 
-
 // Input size variant
-.input--large {
-    @include input-size-variant(auto, 10px 0, 18px, 21px);
-}
 .input--xlarge {
     @include input-size-variant(auto, 10px 0, 25px, 30px);
 }

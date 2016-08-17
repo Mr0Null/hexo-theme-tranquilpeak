@@ -4,10 +4,6 @@
   // Run fancybox feature
 
   $(document).ready(function() {
-    /**
-     * Configure and run Fancybox plugin
-     * @returns {void}
-     */
     function fancyFox() {
       var arrows = true;
       var thumbs = null;
@@ -53,7 +49,6 @@
     }
 
     fancyFox();
-    
     $(window).smartresize(function() {
       fancyFox();
     });

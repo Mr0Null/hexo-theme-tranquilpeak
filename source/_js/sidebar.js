@@ -19,7 +19,6 @@
     // If you change value of `mediumScreenWidth`,
     // you have to change value of `$screen-min: (md-min)` too
     // in `source/_css/utils/variables.scss`
-    this.$body = $('body');
     this.mediumScreenWidth = 768;
   };
 
@@ -31,13 +30,13 @@
     run: function() {
       var self = this;
       // Detect the click on the open button
-      this.$openBtn.click(function() {
+      self.$openBtn.click(function() {
         if (!self.$sidebar.hasClass('pushed')) {
           self.openSidebar();
         }
       });
       // Detect the click on close button
-      this.$closeBtn.click(function() {
+      self.$closeBtn.click(function() {
         if (self.$sidebar.hasClass('pushed')) {
           self.closeSidebar();
         }
@@ -97,11 +96,10 @@
       var self = this;
       // Check if the sidebar isn't swiped
       // and prevent multiple click on the open button with `.processing` class
-      if (!this.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
+      if (!self.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
         // Swipe the sidebar to the right
-        this.$sidebar.addClass('processing pushed');
-        // add overflow on body to remove horizontal scroll
-        this.$body.css('overflow-x', 'hidden');
+        self.$sidebar.addClass('processing pushed');
+
         setTimeout(function() {
           self.$sidebar.removeClass('processing');
         }, 250);
@@ -113,13 +111,14 @@
      * @return {void}
      */
     swipeSidebarToLeft: function() {
+      var self = this;
       // Check if the sidebar is swiped
       // and prevent multiple click on the close button with `.processing` class
-      if (this.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
+      if (self.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
         // Swipe the sidebar to the left
-        this.$sidebar.addClass('processing').removeClass('pushed processing');
-        // go back to the default overflow
-        this.$body.css('overflow-x', 'auto');
+        self.$sidebar
+          .addClass('processing')
+          .removeClass('pushed processing');
       }
     },
 
@@ -131,9 +130,9 @@
       var self = this;
       // Check if the blog isn't swiped
       // and prevent multiple click on the open button with `.processing` class
-      if (!this.$blog.hasClass('pushed') && !this.$blog.hasClass('processing')) {
+      if (!self.$blog.hasClass('pushed') && !this.$blog.hasClass('processing')) {
         // Swipe the blog to the right
-        this.$blog.addClass('processing pushed');
+        self.$blog.addClass('processing pushed');
 
         setTimeout(function() {
           self.$blog.removeClass('processing');
@@ -151,7 +150,9 @@
       // and prevent multiple click on the close button with `.processing` class
       if (self.$blog.hasClass('pushed') && !this.$blog.hasClass('processing')) {
         // Swipe the blog to the left
-        self.$blog.addClass('processing').removeClass('pushed');
+        self.$blog
+          .addClass('processing')
+          .removeClass('pushed');
 
         setTimeout(function() {
           self.$blog.removeClass('processing');

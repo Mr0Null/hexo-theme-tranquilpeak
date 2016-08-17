@@ -1,6 +1,7 @@
 // Highlight code block
 figure.highlight,
 .codeblock {
+    direction: ltr;
     margin:         10px 0;
     line-height:    map-get($highlight, line-height);
     padding-top:    15px;

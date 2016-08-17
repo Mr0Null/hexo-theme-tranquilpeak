@@ -1,9 +1,9 @@
 <div class="<%= (classes ? classes.join(' ') : '') %>">
     <time itemprop="datePublished" datetime="<%= post.date.format() %>">
 	<% if (post.lang) { %>
-		    <%= post.date.locale(post.lang).format(__('date_format')) %>
+		    <%- jdate(post.date, '‏dddd، DD MMM YYYY') %>
     	<% } else { %>
-		    <%= post.date.locale(page.lang).format(__('date_format')) %>
+		    <%- jdate(post.date, 'dddd، DD MMM YYYY') %>
     	<% } %>
     </time>
     <% if ((post.categories) && (post.categories.length > 0)) { %>
@@ -11,3 +11,4 @@
         <%- partial('category', {categories: post.categories})%>
     <% } %>
 </div>
+

@@ -1,8 +1,5 @@
 <!--SCRIPTS-->
-<%- js('assets/js/jquery.js') %>
-<%- js('assets/js/jquery.fancybox.js') %>
-<%- js('assets/js/jquery.fancybox-thumbs.js') %>
-<%- js('assets/js/tranquilpeak.js') %>
+<%- js('assets/js/script-fkh3m4cgkkggns71jvykc1xausewq3ijcyqwiscipnbpgvejtvgcfok5usz2.min.js') %>
 <!--SCRIPTS END-->
 <% if (post.comments) { %>
     <% if (theme.disqus_shortname) { %>
@@ -13,7 +10,7 @@
                     this.page.identifier = '<%= post.disqusIdentifier %>';
                  <% } else { %>
                     this.page.identifier = '<%= post.path %>';
-                 <% } %>
+                 <% } %> 
              };
             (function() {
                 var d = document, s = d.createElement('script');
@@ -46,13 +43,5 @@
         })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
         _st('install','<%= theme.swiftype_install_key %>','2.0.0');
-    </script>
-<% } %>
-<% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
-    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script>
-        var algoliaClient = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
-        var algoliaIndex = algoliaClient.initIndex('<%= config.algolia.indexName %>');
     </script>
 <% } %>
